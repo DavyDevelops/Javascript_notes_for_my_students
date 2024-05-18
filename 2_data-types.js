@@ -10,7 +10,7 @@
  * 5. null
  * 6. undefined
  * 7. symbol
- * 8. Object(obj, arrays, json, etc..)
+ * 8. Object(obj, arrays, json, NaN, etc..)
  */
 
 
