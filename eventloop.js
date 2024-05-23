@@ -30,14 +30,26 @@ This process continues until the call stack is empty
  */
 
 
-const bar = () => console.log("bar") //bar arrow function
+// const bar = () => console.log("bar") //bar arrow function
 
-const baz = () => console.log("baz") //baz arrow function
+// const baz = () => console.log("baz") //baz arrow function
 
-const foo = () => {
-    console.log("foo")
-    setTimeout(bar, 3000) // measured in milliseconds 3000 is 3ms 1000 is 1s 2000 is 2ms
-    baz()
-}
+// const foo = () => {
+//     console.log("foo")
+//     setTimeout(bar, 3000) // measured in milliseconds 3000ms is 3s 1000ms is 1s 2000ms is 2s
+//     baz()
+// }
 
-foo()
+// foo()
+
+/**
+ * The call stack first called the foo function then the baz function, when it saw the setTimeOut it moved the bar function to message queue while waiting(3000ms|| 3s) and then called the bar function from the message queue at the end of the program
+
+When you deploy your app, you want to avoid creating a functions that delays the execution because it might add error in code like undefined object or undefined functions
+
+To avoid this problem node adds promises, promises is a way to execute aa result of an async function as soon as possible rather than being put at the end of the call stack
+
+If the function makes delay it executes at the end of the program
+ */
+
+//maz min max assignment
